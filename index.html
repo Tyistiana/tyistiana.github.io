@@ -20,19 +20,23 @@
         }
         header h1 {
             font-size: 2.5em;
-            color: #FFB6C1;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         nav {
             text-align: center;
             margin: 20px 0;
         }
         nav a {
-            color: #FFB6C1;
+            color: #00ff00; /* Start with green */
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            transition: color 0.5s ease;
         }
         nav a:hover {
+            color: #00ffff; /* Transition to blue */
             text-decoration: underline;
         }
         section {
@@ -42,7 +46,9 @@
             background-color: #1e1e1e;
         }
         h2 {
-            color: #FF69B4;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2em;
             margin-bottom: 10px;
         }
@@ -55,53 +61,91 @@
             padding: 20px;
             background-color: #1f1f1f;
             margin-top: 20px;
+            position: relative;
         }
         footer a {
-            color: #FFB6C1;
+            color: #00ff00;
+        }
+        .decoration {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Your Name's Portfolio</h1>
+        <h1>This is a test</h1>
     </header>
 
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#interests">Personal Interests</a>
-        <a href="#contact">Contact Info</a>
+        <a href="#about" onmouseover="playSound('about-sound')">About Me</a>
+        <a href="#projects" onmouseover="playSound('projects-sound')">Projects</a>
+        <a href="#interests" onmouseover="playSound('interests-sound')">Personal Interests</a>
+        <a href="#contact" onmouseover="playSound('contact-sound')">Contact Info</a>
     </nav>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi!</p>
-        <p>I'm Pongsathon Boonyaanan. I've graduated in Aviation Management and currently working as an Import Officer, but I have a passion for the technology and currently learning Data to apply for my new work.</p>
+        <p>Hello! I need to write this later.</p>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
         <ul>
-            <li><strong>To be added later</li>
+            <li><strong>Project 1:</strong> Description of your first project.</li>
+            <li><strong>Project 2:</strong> Description of your second project.</li>
+            <li><strong>Project 3:</strong> Description of your third project.</li>
         </ul>
     </section>
 
     <section id="interests">
         <h2>Personal Interests</h2>
-        <p>To be added later</p>
+        <p>Upper text</p>
+        <p>Bottom text</p>
     </section>
 
     <section id="contact">
         <h2>Contact Info</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>Email: <a href="mailto:pb.pongsathon@gmail.com">your.pb.pongsathon@gmail.com</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn</a></p>
         <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">Your GitHub</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Pongsathon Boonyaanan</p>
+        <img src="decoration.jpg" alt="Decorative Image" class="decoration">
+        <p>&copy; 2024 Your Name | Built with ❤️ and a love for anime</p>
     </footer>
+
+    <!-- Audio Files for Hover Sound -->
+    <audio id="about-sound" class="hidden">
+        <source src="about-hover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="projects-sound" class="hidden">
+        <source src="projects-hover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="interests-sound" class="hidden">
+        <source src="interests-hover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="contact-sound" class="hidden">
+        <source src="contact-hover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playSound(id) {
+            var audio = document.getElementById(id);
+            audio.play();
+        }
+    </script>
 
 </body>
 </html>
